@@ -1,0 +1,17 @@
+.object-card-list-title{
+    margin-left: 10px;
+}
+
+
+.content-area .map_main {
+    margin: 0px     16px;
+    width: 95%;
+    border-radius: 8px;
+    height: 400px;
+    
+}
+.main_map_container{ 
+    margin: 0px 16px;
+    display: flex;
+    justify-content: center;
+}

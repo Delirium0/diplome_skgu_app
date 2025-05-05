@@ -1,0 +1,61 @@
+/* src/admin/AdminDashboard.module.css */
+
+.dashboardLayout {
+    display: flex;
+    min-height: calc(100vh - 60px); /* Минус высота футера, если PageLayout его включает */
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(30, 30, 30); /* Немного другой фон для админки? */
+    color: rgb(247, 252, 248);
+}
+
+.sidebar {
+    width: 240px; /* Ширина боковой панели */
+    background-color: rgb(40, 40, 40); /* Фон панели */
+    padding: 20px 0;
+    flex-shrink: 0; /* Панель не будет сжиматься */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Прокрутка, если много пунктов */
+}
+
+.adminNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.adminNav li {
+    margin: 0;
+}
+
+.navLink {
+    display: block;
+    padding: 12px 20px;
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-left: 3px solid transparent; /* Для индикатора активной ссылки */
+}
+
+.navLink:hover {
+    background-color: rgb(55, 55, 55);
+    color: white;
+}
+
+.navLink.active { /* Стиль для активной ссылки (класс добавляется NavLink) */
+    background-color: rgba(138, 180, 248, 0.1); /* Легкий фон */
+    color: rgb(138, 180, 248); /* Цвет активной ссылки */
+    font-weight: 500;
+    border-left-color: rgb(138, 180, 248); /* Цветной индикатор слева */
+}
+
+.contentArea {
+    flex-grow: 1; /* Занимает все оставшееся пространство */
+    padding: 0; /* Убираем паддинг, он будет в .adminPageContainer */
+    overflow-y: auto; /* Прокрутка контента, если он не влезает */
+    /* background-color: rgb(21, 21, 21); /* Основной фон контента */
+}
+
+/* !! Важно: Убедись, что стили .adminPageContainer из AdminEvents.module.css */
+/* не конфликтуют и применяются внутри .contentArea */
+/* Возможно, нужно будет убрать max-width из .adminPageContainer или настроить его */

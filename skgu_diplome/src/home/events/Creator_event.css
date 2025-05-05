@@ -1,0 +1,40 @@
+
+
+.event_creator_block {
+    position: relative; /* Чтобы дочерние элементы могли позиционироваться относительно этого блока */
+
+    width: 200px;
+    padding: 3px 3px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(46, 46, 46);
+
+    border-radius: 50px;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* горизонтальное смещение, вертикальное смещение, размытие, цвет */
+    z-index: 1; /* чтобы блок был на переднем плане */
+  }
+  
+  .event_creator_image {
+    width: 50px; 
+    height: 50px;
+    margin-right: 10px;
+    background-size: cover; /* Обрезает изображение, сохраняя пропорции */
+    background-position: center; /* Центрирует изображение */
+    border-radius: 50%; /* Округляет изображение */
+    flex-shrink: 0;
+  }
+  
+  .event_creator_name {
+    font-size: 14px;
+    line-height: 50px; 
+    text-overflow: ellipsis; /* Добавляет "..." в конце, если текст не помещается */
+    white-space: nowrap; /* Запрещает перенос строк */
+    font-family: 'Inter', sans-serif;
+
+    overflow: hidden; /* Обрезает текст, который выходит за пределы блока */
+    color: rgb(247,252,248);
+  }
+  
+

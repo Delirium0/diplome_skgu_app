@@ -1,0 +1,28 @@
+/* Button.css */
+.button_down_menu {
+    background-color: rgb(8, 144, 25); /* Зеленый цвет фона */
+    color: rgb(247, 252, 248); /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 12px; /* Скругляем углы */
+    padding: 5px 20px; /* Уменьшаем отступы (меньше по высоте) */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    font-family: 'Inter', sans-serif; /* Шрифт */
+    transition: background-color 0.3s ease; /* Плавный переход при изменении цвета фона */
+    min-height: 40px; /* Заменяем height на min-height */
+    font-weight: bold;
+    white-space: nowrap; /* Предотвращаем перенос текста на несколько строк изначально */
+    overflow: hidden;     /* Скрываем переполнение текста */
+    text-overflow: ellipsis; /* Добавляем многоточие для переполнения текста */
+}
+
+@media (max-width: 425px) {
+    .button_down_menu {
+        font-size: 14px; /* Уменьшаем размер шрифта на маленьких экранах */
+        padding: 5px 10px; /* Уменьшаем отступы на маленьких экранах */
+        min-height: 35px; /* Немного уменьшаем min-height на маленьких экранах */
+        white-space: normal; /* Разрешаем перенос текста на несколько строк на маленьких экранах */
+        text-overflow: clip; /* Убираем многоточие при переносе текста */
+        overflow: visible;   /* Делаем переполнение видимым при переносе */
+    }
+}

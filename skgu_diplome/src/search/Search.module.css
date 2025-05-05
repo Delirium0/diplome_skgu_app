@@ -1,0 +1,12 @@
+.main_search_block {
+    background-color: rgb(21, 21, 21);
+    padding-bottom: 50px;
+    width: 100%;
+    min-height: 100vh; /* чтобы тёмный фон занимал всю высоту экрана */
+    padding-top: 20px;
+}
+@media (max-width: 425px) {
+    .main_search_block {
+        padding-bottom: 30px; /* Уменьшим отступ снизу на маленьких экранах, если нужно */
+        /* Другие изменения для main_search_block, если необходимо */
+    }}

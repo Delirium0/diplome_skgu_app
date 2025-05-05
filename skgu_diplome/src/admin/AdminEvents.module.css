@@ -1,0 +1,217 @@
+/* src/admin/events/AdminEvents.module.css */
+
+.adminPageContainer {
+    padding: 30px 20px 60px 20px;
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    max-width: 1200px; /* Или другая ширина */
+    margin: 0 auto;
+}
+
+.adminPageTitle {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding-bottom: 15px;
+}
+
+.statusMessage {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    color: rgb(180, 180, 180);
+}
+
+.error {
+    color: rgb(255, 100, 100);
+    background-color: rgba(255, 100, 100, 0.1);
+    border: 1px solid rgba(255, 100, 100, 0.3);
+    border-radius: 8px;
+}
+
+.formError {
+    color: rgb(255, 150, 150);
+    font-size: 0.9em;
+    margin-top: 5px; /* Отступ сверху для ошибки под полем */
+    text-align: center; /* Или под полем */
+}
+
+.createButton {
+    display: inline-block;
+    background-color: rgb(70, 180, 100);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 25px;
+    transition: background-color 0.2s ease;
+}
+
+.createButton:hover {
+    background-color: rgb(90, 200, 120);
+}
+
+/* Стили таблицы */
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 8px;
+    overflow: hidden; /* Для скругления углов */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.adminTable th, .adminTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgb(60, 60, 60);
+}
+
+.adminTable th {
+    background-color: rgb(55, 55, 55);
+    font-weight: 600;
+    color: rgb(220, 220, 220);
+}
+
+.adminTable tbody tr:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+.adminTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.actionsCell {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.actionButton {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: rgb(50, 50, 50);
+    transition: opacity 0.2s ease;
+}
+.actionButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.editButton {
+    background-color: rgb(70, 130, 180); /* Синий */
+}
+.editButton:hover:not(:disabled) {
+    background-color: rgb(90, 150, 200);
+}
+
+.deleteButton {
+    background-color: rgb(180, 70, 70); /* Красный */
+}
+.deleteButton:hover:not(:disabled) {
+    background-color: rgb(200, 90, 90);
+}
+
+/* Стили формы */
+.adminForm {
+    background-color: rgb(46, 46, 46);
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-weight: 500;
+    color: rgb(210, 210, 210);
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="url"],
+.formGroup input[type="datetime-local"],
+.formGroup input[type="tel"],
+.formGroup input[type="email"],
+.formGroup textarea {
+    background-color: rgb(60, 60, 60);
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    color: rgb(247, 252, 248);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.formGroup input:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: rgb(138, 180, 248);
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.2);
+}
+.formGroup input:disabled,
+.formGroup textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: rgb(50, 50, 50);
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+.formActions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center; /* Или flex-start / flex-end */
+}
+
+.submitButton, .cancelButton {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.submitButton {
+    background-color: rgb(138, 180, 248);
+    color: rgb(21, 21, 21);
+    border: none;
+}
+.submitButton:hover:not(:disabled) {
+    background-color: rgb(160, 195, 250);
+}
+.submitButton:disabled {
+    background-color: rgb(80, 80, 80);
+    color: rgb(140, 140, 140);
+    cursor: not-allowed;
+}
+
+.cancelButton {
+    background-color: rgb(100, 100, 100);
+    color: white;
+    border: none;
+}
+.cancelButton:hover {
+    background-color: rgb(120, 120, 120);
+}

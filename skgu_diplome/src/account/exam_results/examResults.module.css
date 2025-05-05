@@ -1,0 +1,177 @@
+/* src/account/exam_results/examResults.module.css */
+
+/* Общие стили страницы */
+.examResultsPage {
+    padding-top: 30px;
+    padding-bottom: 60px; /* Под футер */
+    /* background-color: rgb(21, 21, 21); /* Глобально? */
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Наследуем от App.css или добавляем здесь */
+.page_block {
+    min-height: calc(100vh - 60px); /* Минимальная высота минус футер */
+    display: flex;
+    flex-direction: column;
+}
+
+.page_content {
+    flex-grow: 1;
+    padding: 0 20px; /* Отступы по бокам для контента */
+     max-width: 1200px; /* Ограничение ширины контента на больших экранах */
+     margin: 0 auto; /* Центрирование контента */
+     width: 100%;
+     box-sizing: border-box;
+}
+
+
+.resultsHeader {
+    color: rgb(247, 252, 248);
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Десктопная версия (Таблица) --- */
+.resultsContainerDesktop {
+    display: block; /* Показываем по умолчанию */
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow-x: auto; /* Горизонтальная прокрутка, если таблица шире */
+    padding: 20px;
+}
+
+.resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(247, 252, 248);
+    font-size: 0.95em; /* Немного уменьшим шрифт в таблице */
+}
+
+.resultsTable th,
+.resultsTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    vertical-align: top; /* Выравнивание по верху для длинных названий */
+}
+
+.resultsTable th {
+    font-weight: bold;
+    background-color: rgb(60, 60, 60);
+    position: sticky; /* Прилипающий заголовок при прокрутке */
+    top: 0;
+    z-index: 1;
+}
+
+.resultsTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.resultsTable tbody tr:nth-child(odd) {
+     background-color: rgba(55, 55, 55, 0.5); /* Легкая подсветка нечетных строк */
+}
+
+.resultsTable tbody tr:hover {
+    background-color: rgb(70, 70, 70); /* Подсветка при наведении */
+}
+
+/* --- Мобильная версия (Карточки) --- */
+.resultsContainerMobile {
+    display: none; /* Скрываем по умолчанию */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Отступ между карточками */
+}
+
+.resultCard {
+    background-color: rgb(46, 46, 46);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.cardSubject {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding-bottom: 10px;
+    line-height: 1.4;
+}
+
+.cardDetails p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: rgb(220, 220, 220);
+}
+
+.cardDetails p strong {
+    color: rgb(247, 252, 248);
+    margin-right: 5px; /* Небольшой отступ после жирного текста */
+}
+
+.cardDetails p:last-child {
+    margin-bottom: 0;
+}
+
+.cardGrades {
+    margin-top: 15px !important; /* Отступ сверху для блока оценок */
+    padding-top: 10px;
+    border-top: 1px solid rgb(60, 60, 60);
+    display: flex;
+    justify-content: space-between; /* Разнести оценки по краям */
+    align-items: center;
+    font-size: 1.1em !important; /* Крупнее оценки */
+}
+.cardGrades span:first-child {
+     font-weight: bold;
+}
+.cardGrades span:last-child {
+     color: rgb(180, 180, 180);
+     font-size: 0.9em;
+}
+
+/* --- Статусные сообщения --- */
+.statusMessage {
+     padding: 40px 20px;
+     text-align: center;
+}
+.loading, .error, .noResults {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+}
+
+.error {
+    color: rgb(255, 100, 100);
+}
+
+/* --- Медиа-запросы для адаптивности --- */
+@media (max-width: 768px) {
+    .resultsContainerDesktop {
+        display: none; /* Скрываем таблицу на мобильных */
+    }
+    .resultsContainerMobile {
+        display: flex; /* Показываем карточки */
+    }
+    .page_content {
+        padding: 0 15px; /* Уменьшаем боковые отступы */
+    }
+     .resultsHeader {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .resultsContainerDesktop {
+        display: block; /* Показываем таблицу на десктопе */
+    }
+    .resultsContainerMobile {
+        display: none; /* Скрываем карточки */
+    }
+}

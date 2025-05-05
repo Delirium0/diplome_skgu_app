@@ -1,0 +1,175 @@
+/* src/components/EventsCreate/EventsCreate.module.css */
+
+/* Общие стили страницы создания событий */
+.eventsCreatePage {
+    padding-top: 30px;
+    padding-bottom: 60px; /* Под футер */
+    background-color: rgb(21, 21, 21); /* **Явно задаем темно-серый фон для страницы** */
+    color: rgb(247, 252, 248); /* Устанавливаем цвет текста по умолчанию для страницы */
+}
+
+.eventsCreateHeader {
+    margin-left: 26px;
+    color: inherit; /* Наследуем цвет текста от .eventsCreatePage */
+    font-family: 'Inter', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.eventsCreateContainer {
+    padding: 0 26px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.eventForm {
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Усилим тень */
+    padding: 30px;
+    border: 1px solid rgba(80, 80, 80, 0.3); /* Добавим легкую рамку для разделения */
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formLabel {
+    display: block;
+    color: inherit; /* Наследуем цвет текста от .eventsCreatePage */
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.formInput, .formTextarea, .formFile {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgb(80, 80, 80);
+    background-color: rgb(60, 60, 60);
+    color: inherit; /* Наследуем цвет текста от .eventsCreatePage */
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.formInput:focus, .formTextarea:focus {
+    border-color: rgb(0, 123, 255); /* Подсветка рамки при фокусе */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Добавим легкую тень при фокусе */
+    outline: none; /* Уберем стандартную обводку фокуса браузера */
+}
+
+
+.formFile {
+    background-color: transparent;
+    color: rgba(247, 252, 248, 0.8); /* Сделаем текст чуть менее насыщенным белым */
+    font-size: 0.9em; /* Уменьшим размер шрифта, если нужно */
+}
+
+.formFile::file-selector-button {
+    background-color: rgb(80, 80, 80); /* Цвет фона, как у инпутов */
+    color: rgb(247, 252, 248); /* Цвет текста как у основного текста */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 12px; /* Округлим углы, как у кнопки "Создать событие" */
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'Inter', sans-serif; /* Шрифт как у всего текста */
+    font-size: 0.95em; /* Размер шрифта чуть меньше основного */
+}
+
+.formFile::file-selector-button:hover {
+    background-color: rgb(100, 100, 100); /* Немного светлее при наведении */
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submitButton {
+    background-color: rgb(8, 144, 25); /* Зеленый цвет фона как у button_down_menu */
+    color: rgb(247, 252, 248); /* Цвет текста как у button_down_menu */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px; /* Скругляем углы как у button_down_menu */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold; /* Добавим жирный шрифт как у button_down_menu */
+    min-height: 40px; /* Добавим min-height для высоты кнопки */
+    white-space: nowrap; /* Предотвратим перенос текста */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавим многоточие для длинного текста */
+}
+
+.submitButton:hover {
+    background-color: rgb(7, 125, 22); /* Немного темнее при наведении */
+}
+
+.submitButton:disabled {
+    background-color: rgb(108, 117, 125);
+    cursor: not-allowed;
+}
+
+.error, .success, .loading {
+    color: inherit; /* Наследуем цвет текста от .eventsCreatePage */
+    font-family: 'Inter', sans-serif;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error {
+    background-color: rgb(187, 1, 60);
+}
+
+.success {
+    background-color: rgb(28, 189, 75);
+}
+
+.loading {
+    background-color: rgb(70, 70, 70);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .eventsCreateHeader {
+        margin-left: 20px;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    .eventsCreateContainer {
+        padding: 0 20px;
+    }
+    .eventForm {
+        padding: 20px;
+    }
+    .formGroup {
+        margin-bottom: 15px;
+    }
+    .formLabel {
+        font-size: 0.95em;
+        margin-bottom: 8px;
+    }
+    .formInput, .formTextarea, .formFile, .submitButton {
+        font-size: 0.95em;
+        padding: 10px;
+        border-radius: 6px;
+    }
+    .submitButton {
+        padding: 10px 20px;
+        border-radius: 10px; /* Скругляем углы меньше на мобильных */
+        min-height: 35px; /* Уменьшим высоту на мобильных */
+    }
+}
+
+@media (min-width: 1200px) {
+    .eventsCreateContainer {
+        max-width: 900px;
+    }
+}

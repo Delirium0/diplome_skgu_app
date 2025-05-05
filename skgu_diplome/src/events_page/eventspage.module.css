@@ -1,0 +1,213 @@
+/* src/events/eventspage.module.css */
+
+/* Общие стили страницы события */
+.eventPage {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 0 0 60px 0; /* Убрали верхний padding, т.к. баннер может быть вверху. Добавили нижний под футер */
+    min-height: calc(100vh - 60px);
+    box-sizing: border-box;
+    /* background-color: rgb(21, 21, 21); /* Уже должно быть глобально */
+}
+
+/* Обертка для контента */
+.contentWrapper {
+    max-width: 900px;
+    margin: 0 auto; /* Центрирование */
+    background-color: rgb(46, 46, 46); /* Фон для контентной области */
+    padding: 30px;
+    border-radius: 0 0 16px 16px; /* Скругление только снизу, если баннер вплотную сверху */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Баннер */
+.eventBanner {
+    max-width: 900px; /* Ширина как у контента */
+    margin: 0 auto 0 auto; /* Центрирование, без нижнего отступа, чтобы прилегал к контенту */
+    border-radius: 16px 16px 0 0; /* Скругление только сверху */
+    overflow: hidden; /* Обрезать изображение по рамке */
+    background-color: rgb(60, 60, 60); /* Фон на случай, если изображение не загрузится */
+    max-height: 350px; /* Ограничение высоты баннера */
+    display: flex; /* Чтобы img вел себя предсказуемо */
+    justify-content: center;
+    align-items: center;
+}
+
+.eventBanner img {
+    width: 100%;
+    height: auto; /* Авто-высота для сохранения пропорций */
+    object-fit: cover; /* Масштабировать с обрезкой */
+    display: block; /* Убрать лишний отступ снизу */
+    max-height: 350px; /* Повторяем ограничение */
+}
+
+/* Если баннера нет, добавляем верхнее скругление и отступ для contentWrapper */
+.contentWrapper:not(:has(+ .eventBanner)) { /* Псевдоселектор :has может не везде поддерживаться, используйте JS если нужно */
+    border-radius: 16px;
+    margin-top: 30px; /* Добавляем отступ сверху, если нет баннера */
+}
+/* Альтернатива без :has - добавлять класс в JS */
+.contentWrapper.noBanner {
+    border-radius: 16px;
+    margin-top: 30px;
+}
+
+
+/* Название события */
+.eventName {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Блок мета-информации */
+.eventMeta {
+    display: flex;
+    flex-wrap: wrap; /* Перенос на новую строку при нехватке места */
+    gap: 15px 25px; /* Отступы между элементами (вертикальный / горизонтальный) */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(60, 60, 60);
+    font-size: 0.95em;
+    color: rgb(200, 200, 200);
+    justify-content: center; /* Центрировать элементы в строке */
+}
+
+.metaItem, .creatorInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metaIcon {
+    font-size: 1.2em; /* Немного увеличить иконку */
+    color: rgb(180, 180, 180);
+}
+
+/* Информация о создателе */
+.creatorInfo {
+    /* Можно добавить стили, если нужно выделить */
+}
+.creatorImage {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgb(80, 80, 80);
+}
+.creatorName {
+    font-weight: 500;
+    color: rgb(220, 220, 220);
+}
+
+
+/* Секции (Описание, Контакты) */
+.section {
+    margin-bottom: 35px;
+}
+
+.sectionTitle {
+    font-size: 1.6em;
+    color: rgb(220, 220, 220);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(60, 60, 60);
+}
+
+.textBlock {
+    line-height: 1.7;
+    font-size: 1em;
+}
+
+.textBlock p {
+    margin-bottom: 1em;
+}
+.textBlock p:last-child {
+    margin-bottom: 0;
+}
+
+/* Контакты */
+.contactInfo {
+    font-size: 1em;
+}
+.contactInfo p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.contactInfo p:last-child {
+    margin-bottom: 0;
+}
+.contactInfo a {
+    color: rgb(138, 180, 248);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.contactInfo a:hover {
+    color: rgb(218, 230, 255);
+    text-decoration: underline;
+}
+.contactIcon {
+    font-size: 1.3em;
+    color: rgb(180, 180, 180);
+}
+
+/* Статусные сообщения */
+.statusMessage {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 60px 20px; /* Больше отступы */
+    text-align: center;
+    font-size: 1.3em;
+    min-height: 300px; /* Минимальная высота для центрирования */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    color: rgb(255, 100, 100);
+}
+
+/* Адаптивность */
+@media (max-width: 940px) { /* Немного шире, чем 900px контента */
+    .contentWrapper, .eventBanner {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contentWrapper {
+        padding: 20px;
+         border-radius: 0 0 12px 12px;
+    }
+     .eventBanner {
+         border-radius: 12px 12px 0 0;
+         max-height: 250px;
+     }
+     /* Если баннера нет */
+     .contentWrapper.noBanner {
+         border-radius: 12px;
+         margin-top: 20px;
+     }
+    .eventName {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .eventMeta {
+        font-size: 0.9em;
+        gap: 10px 20px;
+        justify-content: flex-start; /* Начать слева на мобильных */
+    }
+    .sectionTitle {
+        font-size: 1.4em;
+    }
+    .textBlock, .contactInfo {
+        font-size: 0.95em;
+    }
+}

@@ -1,0 +1,348 @@
+/* Subject_container.module.css */
+.subject_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Добавляем flex-wrap на случай, если блоки не помещаются в ряд */
+    position: relative; /* **Добавьте эту строку** */
+}
+
+.card {
+    display: flex;
+    height: 140px; /* Фиксированная высота по умолчанию */
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin: 10px 10px;
+    flex: 0 0 70%; /* Занимает 70% ширины контейнера по умолчанию */
+    overflow: auto;
+    justify-content: space-between; /* Размещаем текст и стрелку по краям */
+    align-items: flex-start; /* Выравниваем контент по верхнему краю */
+    padding: 20px; /* Добавим отступы внутри карточки */
+    color: white; /* Белый цвет текста */
+    font-family: sans-serif; /* Установим шрифт */
+}
+
+.text_container {
+    display: flex;
+    flex-direction: column; /* Располагаем заголовки вертикально */
+}
+
+.subject_title {
+    font-size: 18px; /* Размер заголовка */
+    line-height: 1.2; /* Межстрочный интервал для заголовка */
+    margin-bottom: 5px; /* Отступ снизу от заголовка */
+}
+
+.teacher_name {
+    font-size: 14px; /* Размер имени преподавателя */
+    color: #ccc; /* Цвет имени преподавателя, можно сделать чуть светлее */
+}
+
+.another_container {
+    display: flex;
+    height: 140px; /* Фиксированная высота по умолчанию */
+    width: 140px;
+    min-width: 140px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin: 10px 10px;
+    overflow: auto;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    flex-direction: row; /* Располагаем стрелку и число горизонтально */
+    color: white;
+}
+
+.progress_icon {
+    width: 31px;
+    height: 31px;
+    object-fit: contain;
+
+}
+
+.progress_icon g {
+    fill: green; /* Зеленый цвет для стрелки */
+}
+
+.progress_icon_card {
+    width: 20px; /* Меньший размер для стрелки в карточке */
+    height: 20px;
+    object-fit: contain;
+    align-self: flex-end; /* Выравниваем стрелку внизу справа в карточке */
+}
+
+.progress_icon_card g {
+    fill: green;
+}
+
+.number_container {
+    font-size: 48px; /* Большой размер числа */
+    font-weight: bold; /* Жирное число */
+    line-height: 1; /* Уменьшим межстрочный интервал для числа */
+    margin-top: 5px; /* Отступ сверху от стрелки */
+}
+
+.arrow_list {
+    margin-left: 10px;
+    display: inline-block; /* Важно для transform */
+    transform: scaleY(0.7); /* Уменьшаем вертикальный масштаб (значение можно подобрать) */
+    transform-origin: center center; /* Убедимся, что масштабирование от центра */
+    transition: transform 0.3s ease-out; /* Анимация вращения стрелки */
+}
+.arrow_list.open {
+    transform: scaleY(-0.7); /* Стрелка вверх в открытом состоянии */
+}
+
+
+/* Медиазапрос для экранов шириной до 768px (телефоны) */
+@media (max-width: 768px) {
+    .subject_container {
+        justify-content: space-around; /* Распределяем пространство между блоками и по краям */
+    }
+
+    .card {
+        flex: 0 0 calc(65% - 20px); /* Уменьшаем ширину карточки на телефонах, с учетом отступов */
+        max-width: calc(65% - 20px); /* Ограничиваем максимальную ширину */
+        margin: 10px 5px; /* Уменьшаем горизонтальные отступы */
+        height: auto; /* Высота становится автоматической, или можно уменьшить фиксированную высоту, если нужно */
+        min-height: 100px;
+        padding: 15px; /* Уменьшим отступы внутри карточки на телефонах */
+    }
+
+    .another_container {
+        width: calc(35% - 20px); /* Уменьшаем ширину контейнера иконки на телефонах, с учетом отступов */
+        max-width: calc(35% - 20px); /* Ограничиваем максимальную ширину */
+        min-width: auto; /* Убираем min-width, чтобы ширина полностью контролировалась width */
+        margin: 10px 5px; /* Уменьшаем горизонтальные отступы */
+        height: auto; /* Высота становится автоматической, или можно уменьшить фиксированную высоту, если нужно */
+        min-height: 100px;
+    }
+
+    .card, .another_container {
+        height: auto; /* Высота становится автоматической, или можно уменьшить фиксированную высоту, если нужно */
+        min-height: 100px; /* Минимальная высота, чтобы не схлопнулись */
+    }
+
+    .subject_title {
+        font-size: 12px; /* Уменьшим размер заголовка на телефонах */
+    }
+
+    .teacher_name {
+        font-size: 12px; /* Уменьшим размер имени преподавателя на телефонах */
+    }
+
+    .number_container {
+        font-size: 36px; /* Уменьшим размер числа на телефонах */
+    }
+
+    .progress_icon {
+        width: 24px; /* Уменьшим размер стрелки на телефонах */
+        height: 24px;
+    }
+
+    .progress_icon_card {
+        width: 16px; /* Еще меньше стрелка в карточке на телефонах */
+        height: 16px;
+    }
+
+    /*  Изменения для мобильного вида dropdown_grade_item  */
+    .dropdown_grade_item {
+        white-space: nowrap; /* Запрещаем перенос текста, чтобы расширялся блок */
+        min-width: auto; /* Автоматическая ширина на телефонах */
+        width: auto; /*  Чтобы ширина подстраивалась под контент */
+        padding-right: 20px; /* Возвращаем padding справа как на десктопе */
+        padding-left: 20px; /* Возвращаем padding слева как на десктопе */
+    }
+
+    .dropdown_grade_item::after {
+        /*  Разделитель все еще нужен, но можно сделать его менее заметным на телефонах  */
+        top: 20%; /* Возвращаем вертикальное выравнивание разделителя как на десктопе */
+        bottom: 20%;
+    }
+
+    .dropdown_grade_number {
+        font-size: 12px; /* Возвращаем размер номера модуля как на десктопе */
+        /* padding-right: 10px; */
+    }
+
+    .dropdown_grade_value {
+        font-size: 14px; /* Уменьшаем размер оценок на телефонах */
+        display: flex; /* Убедимся, что оценки в ряд */
+        gap: 5px; /* Возвращаем расстояние между оценками как на десктопе */
+        align-items: center; /* Выравнивание оценок по центру по вертикали */
+    }
+     /*  Убираем перенос ряда и возвращаем горизонтальную прокрутку, если ряд не помещается  */
+    .dropdown_grades_row {
+        flex-wrap: nowrap; /* Запрещаем перенос ряда */
+        overflow-x: auto; /* Возвращаем горизонтальную прокрутку */
+        justify-content: flex-start; /*  Выравниваем по левому краю */
+    }
+}
+
+
+/* ... Ваши предыдущие стили ... */
+
+.dropdown_list {
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    margin-top: 5px; /* Оставьте margin-top чтобы был отступ от карточки */
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 85.5%;
+    margin-left: 10px;
+    /* margin-bottom: 10px;  Можно добавить отступ снизу, если нужно  */
+
+
+    /* Анимация growDown */
+    transform-origin: top center;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s linear 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Стиль для открытого состояния списка */
+.open {
+    animation: growDown 300ms ease-out forwards; /* Применяем анимацию при открытии */
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1); /* Убедитесь, что transform: scaleY(1) для конечного состояния */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s linear 0s;
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0);
+    }
+    80% {
+        transform: scaleY(1.1); /* Небольшое превышение для эффекта "пружины" */
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+
+.dropdown_item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #555; /* Разделитель между элементами списка */
+    cursor: pointer; /* Указатель мыши при наведении */
+}
+
+.dropdown_item:last-child {
+    border-bottom: none; /* Убираем разделитель у последнего элемента */
+}
+
+.dropdown_item:hover {
+    background-color: #333; /* Небольшое изменение фона при наведении */
+}
+
+.dropdown_subject_name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dropdown_teacher_name {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+
+.dropdown_grades_rows_container {
+    display: flex;
+    flex-direction: column; /* Располагаем ряды вертикально */
+    gap: 10px; /* Отступ между рядами */
+}
+
+.dropdown_grades_row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0px; /* Убираем gap между элементами, так как padding в dropdown_grade_item обеспечивает отступы */
+    overflow-x: auto;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* padding-right: 10px; */
+    justify-content: flex-start; /* Выравниваем элементы в начале ряда */
+}
+
+.dropdown_grades_row::-webkit-scrollbar {
+    display: none; /* Скрываем полосу прокрутки в Chrome, Safari и Opera */
+}
+
+
+.dropdown_grade_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 8px;
+    background-color: #2e2e2e;
+    /* min-width: 40px;  Убираем min-width чтобы элемент мог расширяться */
+    text-align: center;
+    white-space: nowrap;
+    position: relative; /* Для позиционирования разделителя */
+    padding-right: 20px; 
+    padding-left: 20px; 
+}
+
+/* Разделитель справа от номера модуля */
+.dropdown_grade_item::after {
+    content: '';
+    position: absolute;
+    top: 20%; /* Выравнивание по вертикали */
+    bottom: 20%; /* Выравнивание по вертикали */
+    right: 0;
+    width: 1px; /* Толщина разделителя */
+    background-color: #555; /* Цвет разделителя */
+}
+
+/* Убираем разделитель у последнего элемента в ряду (по CSS) */
+.dropdown_grades_row > .dropdown_grade_item:last-child::after {
+    content: none;
+}
+
+
+.dropdown_grade_number {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 2px;
+    /* padding-right: 10px;  */
+}
+
+.dropdown_grade_value {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex; /* Чтобы оценки в строке были в ряд */
+    gap: 5px; /* Расстояние между оценками, если их несколько */
+    align-items: center; /* Выравнивание оценок по центру по вертикали */
+}
+
+
+/* Медиазапросы при необходимости скорректируйте под список */
+@media (max-width: 768px) {
+    .dropdown_list {
+        width: 95%; /* Корректировка ширины на телефонах */
+        /* margin-left: 5px; */
+    }
+
+    .dropdown_item {
+        padding: 10px 15px; /* Уменьшаем отступы внутри элементов списка на телефонах */
+    }
+
+    .dropdown_subject_name {
+        font-size: 14px; /* Уменьшаем размер заголовка в списке на телефонах */
+    }
+
+    .dropdown_teacher_name {
+        font-size: 12px; /* Уменьшаем размер имени преподавателя в списке на телефонах */
+    }
+
+    .dropdown_grade_value {
+        font-size: 14px; /* Уменьшаем размер оценок в списке на телефонах */
+    }
+}

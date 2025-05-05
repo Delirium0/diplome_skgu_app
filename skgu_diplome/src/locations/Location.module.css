@@ -1,0 +1,186 @@
+/* src/components/Location/Location.module.css */
+
+/* Общие стили страницы локации */
+.locationPage {
+    padding-top: 30px;
+    padding-bottom: 60px; /* Под футер */
+    background-color: rgb(21, 21, 21); /* Темно-серый фон */
+    color: rgb(247, 252, 248); /* Цвет текста по умолчанию */
+    font-family: 'Inter', sans-serif; /* Шрифт по умолчанию */
+    min-height: 100vh; /* **Добавляем min-height: 100vh; чтобы фон занимал всю высоту экрана** */
+}
+
+.locationContainer {
+    padding: 0 26px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.locationHeader {
+    margin-left: 0; /* Убираем отступ слева, если не нужен */
+    color: inherit;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center; /* Центрируем заголовок */
+}
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Центрируем по вертикали на весь экран */
+}
+
+.loading {
+    color: inherit;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2em;
+    opacity: 0.8; /* Начальная прозрачность */
+    animation: pulse 2s infinite alternate; /* Анимация пульсации */
+    background-color: rgb(46, 46, 46); /* Фон для текста загрузки, чтобы выделялся */
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.05); /* Небольшое увеличение размера */
+    }
+}
+
+
+.locationContainer {
+    padding: 0 26px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.locationInfo {
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border: 1px solid rgba(80, 80, 80, 0.3);
+    margin-bottom: 20px; /* Отступ снизу от блока информации */
+}
+
+.infoLabel {
+    font-weight: bold; /* Выделяем жирным лейблы */
+    margin-right: 5px;
+    display: inline-block;
+    width: 100px; /* Фиксированная ширина для лейблов, чтобы выровнять текст */
+    text-align: left; /* Выравниваем текст лейблов по левому краю */
+}
+
+.error, .success, .loading {
+    color: inherit;
+    font-family: 'Inter', sans-serif;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error {
+    background-color: rgb(187, 1, 60);
+}
+
+.loading {
+    background-color: rgb(70, 70, 70);
+}
+
+/* Секция этажей */
+.floorsSection {
+    margin-top: 30px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border: 1px solid rgba(80, 80, 80, 0.3);
+}
+
+.floorsHeader {
+    color: inherit;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.floorsList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Этажи в столбик */
+    gap: 20px; /* Отступ между этажами */
+}
+
+.floorItem {
+    /* Стили для каждого этажа, если нужно */
+    border-bottom: 1px solid rgba(80, 80, 80, 0.3); /* Разделитель между этажами */
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.floorItem:last-child {
+    border-bottom: none; /* Убираем разделитель у последнего этажа */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+.floorNumber {
+    color: inherit;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.floorImageContainer {
+    max-width: 100%; /* Картинка не больше контейнера */
+    overflow: hidden; /* Обрезаем, если нужно */
+    border-radius: 8px; /* Скругление углов картинок */
+}
+
+.floorImage {
+    display: block; /* Убираем лишнее пространство под картинкой */
+    width: 100%; /* Резиновая ширина */
+    height: auto; /* Сохраняем пропорции */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .locationContainer {
+        padding: 0 20px;
+    }
+    .locationHeader {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    .locationInfo {
+        padding: 20px;
+    }
+    .infoLabel {
+        font-size: 0.95em;
+        width: 80px; /* Уменьшаем ширину лейблов на мобильных */
+    }
+    .floorsSection {
+        padding: 20px;
+    }
+    .floorsHeader {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    .floorNumber {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .locationContainer {
+        max-width: 900px;
+    }
+}

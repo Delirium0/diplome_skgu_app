@@ -1,0 +1,38 @@
+/* Footer.module.css */
+.footer_container {
+    position: fixed; 
+    bottom: 0;       /* Прикрепляем к нижнему краю окна */
+    left: 0;         /* Прижимаем к левому краю */
+    width: 100%;     /* Занимает всю ширину */
+    height: 50px;    /* Задай нужную высоту */
+    background-color: rgb(66, 66, 66);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* горизонтальное смещение, вертикальное смещение, размытие, цвет */
+    display: flex;
+    justify-content: space-around;
+
+    z-index: 9999;   /* Чтобы футер перекрывал остальной контент */
+}
+
+  
+
+
+.home_block {
+    width: 50px;
+    height: 100%;
+    
+    /* Включаем Flexbox */
+    display: flex;  
+    flex-direction: column; /* Расположение сверху вниз (иконка над текстом) */
+    align-items: center;    /* Центрируем по горизонтали */
+    justify-content: center;/* Центрируем по вертикали */
+  }
+  
+  .footer_home_image {
+    width: 30px;
+    height: 30px;
+    object-fit: contain; /* Сохраняет пропорции, вмещая иконку */
+    filter: brightness(0) invert(1);
+
+  }
+  
+  

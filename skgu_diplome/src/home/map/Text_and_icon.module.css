@@ -1,0 +1,66 @@
+.text_and_icon {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Убедитесь, что занимает всю доступную ширину */
+}
+
+.icon {
+    /* Важно: контролируем размер SVG здесь */
+    width: 1.5em;
+    height: 2em;
+    display: flex; /* Добавлено для выравнивания содержимого внутри icon */
+    align-items: center; /* Добавлено для выравнивания содержимого внутри icon */
+    justify-content: center; /* Добавлено для выравнивания содержимого внутри icon */
+    text-align: center; /* Это может быть избыточно, но оставлено для совместимости */
+}
+
+.text {
+    font-size: 20px;
+}
+
+
+.text_time {
+    font-size: 14px;
+}
+
+.icon_geo {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.icon_geo svg {
+    fill: rgb(247, 252, 248);
+
+}
+
+.text_geo {
+    font-size: 12px;
+
+}
+
+
+
+@media (max-width: 425px) {
+
+    .text {
+        font-size: 12px;
+    }
+    .icon {
+        width: 1.5em;
+        height: 1em;
+        display: flex; /* Добавлено для выравнивания содержимого внутри icon */
+        align-items: center; /* Добавлено для выравнивания содержимого внутри icon */
+        justify-content: center; /* Добавлено для выравнивания содержимого внутри icon */
+        text-align: center; /* Это может быть избыточно, но оставлено для совместимости */
+    }
+    .main_text {
+        font-size: 16px;
+    }
+    }  

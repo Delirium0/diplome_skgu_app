@@ -1,0 +1,212 @@
+/* src/feedback/FeedbackPage.module.css */
+
+/* Базовые стили страницы, похожие на FacultyPage */
+.feedbackPage {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 30px 20px 60px 20px; /* Сверху, Бока, Снизу (под футер) */
+    min-height: calc(100vh - 60px); /* Минимальная высота минус высота футера */
+    box-sizing: border-box;
+    /* background-color: rgb(21, 21, 21); /* Если не задан глобально */
+  }
+  
+  /* Обертка для контента */
+  .contentWrapper {
+    max-width: 700px; /* Чуть уже для формы */
+    margin: 0 auto;
+    background-color: rgb(46, 46, 46);
+    padding: 30px 40px; /* Больше отступы внутри блока */
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .title {
+    font-size: 2em; /* Немного меньше чем FacultyName */
+    margin-bottom: 35px;
+    text-align: center;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding-bottom: 20px;
+    color: rgb(230, 230, 230);
+  }
+  
+  .feedbackForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Отступ между секциями формы */
+  }
+  
+  .formSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Отступ между label и input */
+  }
+  
+  .label {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: rgb(210, 210, 210);
+  }
+  
+  /* Стили для звезд */
+  .stars {
+    display: flex;
+    align-items: center; /* Выравниваем звезды и текст (x/5) по центру */
+    gap: 5px; /* Небольшой отступ между звездами */
+    cursor: default; /* Курсор по умолчанию для контейнера */
+  }
+  
+  .star {
+    font-size: 2.5em; /* Размер звезд */
+    color: rgb(100, 100, 100); /* Цвет пустой звезды */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, transform 0.1s ease;
+    user-select: none; /* Запретить выделение символа звезды */
+  }
+  
+  .star:hover {
+      transform: scale(1.1); /* Небольшое увеличение при наведении */
+  }
+  
+  .star.filled {
+    color: rgb(255, 215, 0); /* Цвет заполненной звезды (золотой) */
+  }
+  
+  .star.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  .star.disabled:hover {
+      transform: none; /* Отключаем увеличение для неактивных */
+  }
+  
+  .ratingValue {
+      margin-left: 15px; /* Отступ слева для текста (x/5) */
+      font-size: 1em;
+      color: rgb(200, 200, 200);
+      font-weight: 500;
+  }
+  
+  
+  /* Стили для текстового поля */
+  .textArea {
+    background-color: rgb(60, 60, 60);
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    color: rgb(247, 252, 248);
+    resize: vertical; /* Разрешить изменять размер только по вертикали */
+    min-height: 100px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .textArea:focus {
+    outline: none;
+    border-color: rgb(138, 180, 248); /* Подсветка при фокусе */
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.3);
+  }
+  
+  .textArea::placeholder {
+      color: rgb(150, 150, 150);
+      font-style: italic;
+  }
+  
+  .textArea:disabled {
+    background-color: rgb(50, 50, 50);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  
+  /* Стили для кнопки отправки */
+  .submitButton {
+    background-color: rgb(138, 180, 248); /* Синий цвет кнопки */
+    color: rgb(21, 21, 21); /* Темный текст на кнопке */
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    margin-top: 10px; /* Небольшой отступ сверху */
+    align-self: center; /* Центрируем кнопку */
+  }
+  
+  .submitButton:hover:not(:disabled) {
+    background-color: rgb(160, 195, 250);
+    box-shadow: 0 2px 8px rgba(138, 180, 248, 0.3);
+  }
+  
+  .submitButton:active:not(:disabled) {
+      transform: scale(0.98); /* Эффект нажатия */
+  }
+  
+  .submitButton:disabled {
+    background-color: rgb(80, 80, 80);
+    color: rgb(140, 140, 140);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* Стили для сообщений об ошибке и успехе */
+  .errorMessage, .successMessage {
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px; /* Добавлен нижний отступ */
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 500;
+  }
+  
+  .errorMessage {
+    background-color: rgba(255, 100, 100, 0.15); /* Полупрозрачный красный фон */
+    color: rgb(255, 150, 150); /* Светло-красный текст */
+    border: 1px solid rgba(255, 100, 100, 0.3);
+  }
+  
+  .successMessage {
+    background-color: rgba(100, 220, 150, 0.15); /* Полупрозрачный зеленый фон */
+    color: rgb(150, 255, 200); /* Светло-зеленый текст */
+    border: 1px solid rgba(100, 220, 150, 0.3);
+  }
+  
+  .authReminder {
+      text-align: center;
+      margin-top: 20px;
+      color: rgb(180, 180, 180);
+      font-size: 0.9em;
+  }
+  
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .feedbackPage {
+      padding: 20px 15px 60px 15px;
+    }
+    .contentWrapper {
+      padding: 25px 20px;
+    }
+    .title {
+      font-size: 1.7em;
+      margin-bottom: 25px;
+    }
+    .star {
+        font-size: 2.2em; /* Чуть меньше звезды на мобильных */
+    }
+    .label {
+        font-size: 1em;
+    }
+    .textArea {
+        font-size: 0.95em;
+    }
+    .submitButton {
+        font-size: 1em;
+        padding: 10px 20px;
+        width: 100%; /* Кнопка на всю ширину на мобильных */
+        align-self: stretch;
+    }
+  }

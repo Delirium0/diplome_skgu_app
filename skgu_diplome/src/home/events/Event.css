@@ -1,0 +1,82 @@
+.bookmark_icon svg {
+    width: 40%; /* Ширина SVG */
+    padding: 0px;
+    margin: 0px;
+}
+
+.bookmark_icon svg path {
+    fill: rgb(247,252,248);
+}
+.circle {
+    display: flex;          /* Делаем круг flex-контейнером */
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    background-color: rgb(46, 46, 46);
+
+    align-items: center;   
+    margin: 10px 10px;
+}
+.background_event_block {
+    display: block;
+    height: 140px;
+    width: 100%;
+}
+.background_event {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%; 
+    border-radius: 8px;
+    background-size: cover; 
+    background-repeat: no-repeat; /* Не повторять изображение */
+    background-position: center; /* Центрирует изображение внутри блока */
+    display: flex;
+    justify-content: right;
+    width: calc(100% - 20px); /* Учитываем отступы для правильного размера */
+
+}
+
+/* Event.css */
+.event_contrainer {
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    justify-content: flex-start; /* Располагаем элементы сверху */
+    align-items: center; /* Выравнивание по центру по горизонтали */
+    width: 90%;
+    min-width: 430px; 
+    height: 300px;
+    max-height: 300px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    position: relative;
+  }
+
+.event_creator_block_overlay {
+    position: absolute;
+    top: 50%;
+    left: 30px; 
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+
+  @media (max-width: 425px) {
+    .event_contrainer {
+        min-width: 280px; 
+
+    }
+  
+
+
+    .event_creator_block_overlay {
+    position: absolute;
+    top: 50%;
+    left: 30px; 
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  }  

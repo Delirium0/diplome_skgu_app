@@ -1,0 +1,84 @@
+.search_icon {
+    width: 33px;
+    height: 33px;
+    object-fit: contain; /* Сохраняет пропорции, вмещая иконку */
+    filter: brightness(0) invert(1);
+    margin: 0px 20px;
+}
+
+.search_block{
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+}
+.searchContainer {
+    position: relative;
+    width: 100%; /* или 100% – зависит от вашего макета */
+  }
+  
+input {
+    border: none;
+    outline: none;
+    background-color: transparent; /*  Сделает фон прозрачным */
+    color: white; /*  Белый текст для лучшей видимости на темном фоне  */
+    font-size: 16px; /*  Настройте размер текста по желанию  */
+    width: 100%; /*  Занимает всю доступную ширину в блоке  */
+    height: 100%; /*  Занимает всю доступную высоту в блоке  */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+    font-size: 1.7em; /* Увеличенный размер шрифта */
+
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5); /*  Полупрозрачный белый цвет для плейсхолдера  */
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2em; /* Или другой размер */
+  color: #888; /* Или другой цвет */
+  padding: 0;
+  margin-left: 5px;
+  outline: none; /* Убирает обводку при фокусе */
+  padding-right: 15px;
+}
+
+.clearButton:hover {
+  color: #333;
+}
+
+@media (max-width: 425px) {
+ 
+  input {
+    border: none;
+    outline: none;
+    background-color: transparent; /*  Сделает фон прозрачным */
+    color: white; /*  Белый текст для лучшей видимости на темном фоне  */
+    font-size: 16px; /*  Настройте размер текста по желанию  */
+    width: 100%; /*  Занимает всю доступную ширину в блоке  */
+    height: 100%; /*  Занимает всю доступную высоту в блоке  */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+
+}
+
+
+.clearButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em; /* Или другой размер */
+  color: #888; /* Или другой цвет */
+  padding: 0;
+  margin-left: 5px;
+  outline: none; /* Убирает обводку при фокусе */
+  padding-right: 15px;
+}
+  }
+

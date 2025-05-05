@@ -1,0 +1,174 @@
+/* src/components/Schedule/Schedule.module.css */
+
+/* Общие стили страницы расписания */
+.schedulePage {
+    padding-top: 30px;
+    padding-bottom: 60px; /* Под футер */
+}
+.schedule_next_and_actual {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.scheduleHeader {
+    margin-left: 26px;
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.scheduleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Отступ между блоками дней недели */
+    padding: 0 26px; /* Отступы по бокам */
+}
+
+.daySchedule {
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow-x: auto; /* Горизонтальная прокрутка для таблиц на узких экранах (десктоп) */
+}
+
+.dayTitle {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    font-size: 1.5em;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    margin-bottom: 20px;
+}
+
+.scheduleTable {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+}
+
+.scheduleTable th, .scheduleTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgb(80, 80, 80);
+}
+
+.scheduleTable th {
+    font-weight: bold;
+    background-color: rgb(60, 60, 60); /* Более темный фон для заголовков */
+}
+
+.scheduleTable tbody tr:last-child td {
+    border-bottom: none; /* Убираем нижнюю границу у последней строки */
+}
+
+
+/* Стили для мобильной версии */
+.scheduleContainerMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Отступ между блоками дней недели */
+    padding: 0 20px; /* Отступы по бокам */
+}
+
+.dayScheduleMobile {
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.dayTitleMobile {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding-bottom: 10px;
+}
+
+.lessonList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступ между карточками уроков */
+}
+
+.lessonCard {
+    background-color: rgb(60, 60, 60);
+    border-radius: 12px;
+    padding: 15px;
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+}
+
+.lessonTimePara {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: rgb(180, 180, 180);
+}
+
+.lessonPara {
+    font-weight: bold;
+}
+
+.lessonDetails > div {
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.lessonDetails > div:last-child {
+    margin-bottom: 0;
+}
+
+/* Состояния загрузки и ошибки */
+.loading, .error, .noSchedule {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.error {
+    color: rgb(187, 1, 60); /* Красный цвет для ошибки */
+}
+
+/* Адаптивность - медиа запросы */
+@media (max-width: 768px) {
+    .scheduleContainer {
+        display: none; /* Скрываем табличное расписание на мобильных */
+    }
+    .scheduleContainerMobile {
+        display: flex; /* Показываем мобильное расписание */
+    }
+    .scheduleHeader {
+        margin-left: 20px; /* Уменьшаем отступ заголовка на мобильных */
+    }
+}
+
+@media (min-width: 769px) {
+    .scheduleContainer {
+        display: flex; /* Показываем табличное расписание на десктопе */
+    }
+    .scheduleContainerMobile {
+        display: none; /* Скрываем мобильное расписание на десктопе */
+    }
+    .scheduleHeader {
+        margin-left: 26px; /* Возвращаем стандартный отступ заголовка на десктопе */
+    }
+}
+
+
+/* Стили из примера home.css, если они не определены глобально */
+.page_block {
+    min-height: 100vh;
+    background-color: rgb(21, 21, 21);
+    /* Отступ снизу равен высоте футера, чтобы контент не скрывался за ним */
+    padding-bottom: 60px; /* тот же 60px, что в футере */
+}
+
+.page_content {
+    flex-grow: 1; /* Контент занимает доступное пространство */
+}

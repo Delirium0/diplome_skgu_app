@@ -1,0 +1,77 @@
+/* Header.module.css */
+
+/* Основной контейнер хедера */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(21, 21, 21); /* Фон как на странице сайта */
+    padding: 20px 26px; /* Отступы как на странице расписания */
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Тень как в блоках расписания */
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Логотип */
+.logo {
+    font-size: 2em; /* Размер шрифта как у заголовков */
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(247, 252, 248); /* Светлый цвет текста */
+    font-family: 'Inter', sans-serif; /* Шрифт Inter */
+}
+
+/* Навигация (если есть, можно стилизовать аналогично) */
+.headerNav {
+    /* Стили для навигационных ссылок, если необходимо */
+}
+
+/* Контейнер для кнопок авторизации */
+.authButtons {
+    display: flex;
+    gap: 15px; /* Отступ между кнопками авторизации и регистрации */
+}
+
+/* Кнопка авторизации */
+.authButton {
+    padding: 12px 20px;
+    background-color: rgb(60, 60, 60); /* Цвет фона кнопки */
+    color: rgb(247, 252, 248); /* Светлый цвет текста кнопки */
+    border: none;
+    border-radius: 12px; /* Скругление углов как у карточек расписания */
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Inter', sans-serif; /* Шрифт Inter */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Меньшая тень, чем у блоков */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+}
+
+.authButton:hover {
+    background-color: rgb(80, 80, 80); /* Цвет фона кнопки при наведении */
+}
+
+/* Адаптивность (можно добавить медиа-запросы, если нужно адаптировать хедер для мобильных) */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px; /* Меньшие отступы на мобильных */
+    }
+    .logo {
+        font-size: 1.5em; /* Меньший размер логотипа на мобильных */
+    }
+    .authButtons {
+        gap: 10px; /* Меньший отступ между кнопками на мобильных */
+    }
+    .authButton {
+        padding: 10px 15px; /* Меньшие отступы на кнопках на мобильных */
+        font-size: 0.9em; /* Меньший размер шрифта на кнопках на мобильных */
+    }
+}

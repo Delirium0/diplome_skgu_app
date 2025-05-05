@@ -1,0 +1,37 @@
+.new_button {
+    background-color: rgb(8,144,25); /* Зеленый цвет фона */
+    color: rgb(247, 252, 248); /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 12px; /* Скругляем углы */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    font-family: 'Inter', sans-serif; /* Шрифт */
+    transition: background-color 0.3s ease; /* Плавный переход при изменении цвета фона */
+    padding: 5px 20px; /* Уменьшаем отступы (меньше по высоте) */
+    height: 40px;
+    font-weight: bold;
+
+}
+
+
+  @media (max-width: 425px) {
+
+  .new_button {
+    background-color: rgb(8,144,25); /* Зеленый цвет фона */
+    color: rgb(247, 252, 248); /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 12px; /* Скругляем углы */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 12px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    font-family: 'Inter', sans-serif; /* Шрифт */
+    transition: background-color 0.3s ease; /* Плавный переход при изменении цвета фона */
+    padding: 5px 20px; /* Уменьшаем отступы (меньше по высоте) */
+    height: 30px;
+    font-weight: bold;
+
+
+    
+  }
+  }  

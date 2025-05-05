@@ -1,0 +1,89 @@
+.main_block{
+    min-height: 100vh;
+    background-color: rgb(21, 21, 21);
+    padding-bottom: 60px;
+    padding-top: 10px;
+
+}
+.account_block{
+    min-height: 100vh;
+    background-color: rgb(21, 21, 21);
+    padding-bottom: 60px;
+    padding-top: 10px;
+
+}
+/* Account.module.css */
+
+.account_container {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы блоки переносились на новую строку на маленьких экранах */
+    justify-content: flex-start; /* Выравнивание блоков по началу строки */
+    gap: 20px; /* Отступы между блоками */
+    padding: 20px; /* Отступы вокруг контейнера */
+    background-color: rgb(21, 21, 21);
+
+}
+
+.faculties {
+    width: 140px;
+    height: 140px;
+    min-width: 140px;
+    min-height: 140px;
+    background-color: rgb(46, 46, 46);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    margin-top: 0; /* Убираем margin-top, так как теперь отступы у контейнера */
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Цвет текста внутри блока, если нужно */
+}
+
+.faculty_icon svg {
+    min-width: 70px;
+    min-height: 70px;
+    fill: black; /* Изменено на черный */
+}
+
+.progress_icon {
+    width: 31px;
+    height: 31px;
+    object-fit: contain;
+
+
+}
+
+.faculty_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.faculties div {
+    padding: 0px 5px;
+}
+
+/* Адаптивные стили для телефонов */
+@media (max-width: 768px) { /* Медиа запрос для экранов меньше 768px (обычно планшеты и телефоны) */
+    .account_container {
+        justify-content: center; /* Или center, если хотите центрировать ряды */
+        gap: 10px; /* Уменьшаем отступ между блоками */
+    }
+    .faculties {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+        min-height: 120px;
+        min-width: auto; /* Автоматическая ширина, чтобы занимать половину контейнера */
+        margin-top: 10px; /* Добавляем margin-top между блоками на маленьких экранах */
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    /* Если нужно на очень маленьких экранах сделать один блок в ряд */
+   
+}

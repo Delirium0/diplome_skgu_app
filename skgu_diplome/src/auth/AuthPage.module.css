@@ -1,0 +1,95 @@
+/* AuthPage.module.css */
+
+.authPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px; /* Отступы сверху и по бокам */
+}
+
+.authHeader {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.authForm {
+    background-color: rgb(46, 46, 46);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px; /* Фиксированная ширина формы */
+    max-width: 100%; /* Максимальная ширина, чтобы форма не выходила за границы экрана на маленьких устройствах */
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.inputGroup label {
+    display: block;
+    color: rgb(247, 252, 248);
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+}
+
+.inputGroup input[type="text"],
+.inputGroup input[type="password"],
+.inputGroup input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 8px;
+    background-color: rgb(31, 31, 31);
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box; /*  Чтобы padding не увеличивал общую ширину элемента  */
+}
+
+.authButton {
+    background-color: rgb(8, 144, 25); /*  Зеленый цвет для кнопки  */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /*  Плавное изменение цвета при наведении  */
+}
+
+.authButton:hover {
+    background-color: rgb(6, 110, 19); /*  Более темный зеленый при наведении  */
+}
+
+.authLinks {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.authLinks a {
+    color: rgb(150, 150, 150);
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.authLinks a:hover {
+    color: rgb(180, 180, 180);
+}
+
+/* Стили из вашего примера для page_block и page_content, если они еще не определены глобально */
+.page_block {
+    min-height: 100vh;
+    background-color: rgb(21, 21, 21);
+    /* Отступ снизу равен высоте футера, чтобы контент не скрывался за ним */
+    padding-bottom: 60px; /* тот же 60px, что в футере */
+}
+
+.page_content {
+    flex-grow: 1; /* Контент занимает доступное пространство */
+}

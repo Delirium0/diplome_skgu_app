@@ -1,0 +1,23 @@
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.carousel-container::-webkit-scrollbar { /* WebKit (Chrome, Safari, newer Edge) */
+    display: none;
+}
+
+.carousel {
+    display: flex;   /* Make events line up horizontally */
+    gap: 16px;      /* Adjust spacing between events */
+    padding: 16px;
+}
+
+.event-card { /* Style your Event component */
+    min-width: 200px;  /* Or whatever width you need */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    /* ... other styling ... */
+}

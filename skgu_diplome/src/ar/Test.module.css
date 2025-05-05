@@ -1,0 +1,144 @@
+/* Test.module.css */
+
+.arPage {
+    min-height: 100vh;
+    background-color: rgb(21, 21, 21);
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 60px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arSelectors {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    z-index: 200;
+    position: relative;
+}
+
+.arSelectorGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.arLabel {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.arSelect {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgb(80, 80, 80);
+    background-color: rgb(46, 46, 46);
+    color: rgb(247, 252, 248);
+    font-size: 1em;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="rgb(247, 252, 248)" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    padding-right: 30px;
+}
+
+.arSelect:focus {
+    outline: none;
+    border-color: rgb(0, 123, 255);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+/* Стили для контейнера AR-камеры */
+.arCameraContainer {
+    margin-top: 30px; /* Increased margin-top to lower the camera view */
+    min-width: 300px;
+    min-height: 300px;
+    width: 100%;
+    max-height: 60vh;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px; /* Added border-radius for rounded corners */
+}
+
+.arCameraContainer video {
+    position: relative !important;
+    margin-top: 150px !important;
+    padding: 0px 40px;
+    z-index: 1 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 15px; /* Match border-radius for video inside */
+}
+
+
+/* Стили для текста "Наведите камеру" и "Кабинет" */
+.arMessage {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px; /* Уменьшил отступ снизу, чтобы описание было ближе */
+    font-size: 1.2em;
+}
+
+/* Стили для описания кабинета */
+.arDescription {
+    color: #eee; /* Цвет описания, можно изменить */
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0; /* Убрал отступ сверху, так как уже есть отступ у .arMessage */
+    margin-bottom: 20px; /* Добавил отступ снизу */
+    padding: 0 20px; /* Горизонтальный отступ для лучшего вида на узких экранах */
+    line-height: 1.4; /* Увеличил межстрочный интервал для лучшей читаемости */
+}
+
+
+/* Состояния загрузки и ошибки */
+.loading, .error {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.error {
+    color: rgb(187, 1, 60); /* Красный цвет для ошибки */
+}
+
+/* Адаптивность - медиа запросы (пример для мобильных) */
+@media (max-width: 768px) {
+    .arSelectors {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        z-index: 10;
+    }
+    .arSelect {
+        width: 100%;
+    }
+    .arCameraContainer {
+        margin-top: 30px;
+    }
+    .arMessage {
+        font-size: 1em;
+    }
+    .arDescription {
+        font-size: 0.9rem; /* Немного уменьшил шрифт описания на мобильных */
+        padding: 0 10px; /* Уменьшил горизонтальный отступ на мобильных */
+    }
+}
+
+.ar-config-not-found .mindar-ui-overlay.mindar-ui-scanning {
+    display: none !important;
+}

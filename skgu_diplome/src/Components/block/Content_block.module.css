@@ -1,0 +1,83 @@
+.container {
+    width: 90%;
+    background-color: red;
+    margin: 0 auto; /* Center the container */
+    height: 140px;
+    }
+
+
+    .card {
+        display: flex;
+        height: 140px; /* Фиксированная высота */
+        background-color: rgb(46, 46, 46);
+        border-radius: 16px;
+        box-sizing: border-box;
+        margin: 10px 10px;
+        flex: 1 1 calc(33.33% - 20px); /* Равномерное распределение по строке с учетом отступов */
+        overflow: auto; /*  Добавляем прокрутку, если контент не помещается */
+    }
+    
+
+.svg_block {
+    width: 20%;
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование */
+    align-items: center; /* Вертикальное центрирование */
+}
+.svg_card_main {
+
+    width: 66px;
+    height: 66px;
+    fill: rgb(247, 252, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* центрируем svg */
+    box-sizing: border-box; /* Важно! Учитывает отступы и границы */
+}
+
+.main_info_block {
+    width: 80%;
+    box-sizing: border-box; /* Важно! Учитывает отступы и границы */
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    justify-content: space-around;
+}
+
+
+
+.suggestionIcon {
+    width: 20px;         
+    height: 20px;
+    object-fit: contain;
+    margin-right: 8px;      
+    filter: brightness(0) invert(1);
+
+  }
+
+.main_icon {
+
+width: 70px;          /* Настройте размер иконки по вкусу */
+height: 70px;
+object-fit: contain;
+margin-right: 8px;      /* Отступ между иконкой и текстом */
+filter: brightness(0) invert(1);
+
+}
+.text_and_icon{
+    display: flex;
+}
+.button_dop_info {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 11px; /* Добавляет 11px отступа снизу */
+    padding-right: 50px;
+    margin-left: auto; /* Отодвигаем кнопку вправо */
+}
+
+.text_time{
+    margin-right: 5px;
+}
+
+

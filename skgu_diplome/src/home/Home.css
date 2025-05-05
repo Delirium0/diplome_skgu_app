@@ -1,0 +1,20 @@
+/* home.css */
+.page_block {
+    min-height: 100vh;
+    background-color: rgb(21, 21, 21);
+    /* Отступ снизу равен высоте футера, чтобы контент не скрывался за ним */
+    padding-bottom: 60px; /* тот же 60px, что в футере */
+}
+
+.page_content {
+    flex-grow: 1; /* Контент занимает доступное пространство */
+}
+
+.events_header {
+    margin-left: 26px;
+    color: rgb(247, 252, 248); /* Цвет текста */
+    padding-top: 30px;
+    font-family: 'Inter', sans-serif; /* Шрифт */
+    
+}
+

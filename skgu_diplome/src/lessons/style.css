@@ -1,0 +1,17 @@
+
+
+
+.main-container {
+    display: block;
+    border: 1px solid black;
+    width: 300px;
+    text-align: center;
+}
+
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px
+    
+}

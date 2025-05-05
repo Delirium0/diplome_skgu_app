@@ -1,0 +1,17 @@
+/* Search_result_map_block.module.css */
+.map_block {
+    width: 90%; /* Или фиксированное значение */
+    height: auto; /* Автоматическая высота, чтобы соответствовать содержимому */
+    margin: 10px auto; /* Центрирование по горизонтали */
+    overflow: hidden; /* Обрезаем все, что выходит за границы */
+}
+
+.map_block img {
+    width: 100%; /* Картинка занимает всю ширину блока */
+    height: auto; /* Высота пропорционально ширине */
+    display: block; /* Убираем лишние отступы снизу */
+}
+.label {
+    margin: 10px 0px;
+    font-size: 1.5em;
+}

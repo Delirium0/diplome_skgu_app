@@ -1,0 +1,102 @@
+
+.down_info_block {
+    width: 100%; /* Ширина 100% */
+    margin: 0;
+    padding-left: 30px;
+    padding-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .down_info_container {
+    width: 100%; /* Ширина 100% */
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 16;
+    justify-content: flex-start; /* Выравниваем по левому краю */
+    color: rgb(247,252,248);
+    max-height: 140px;
+
+  
+
+  } 
+  .header_down_info {
+    display: -webkit-box; /* Включаем поддержку блочной модели для обрезки текста */
+    -webkit-line-clamp: 2; /* Устанавливаем максимальное количество строк */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация текста */
+    overflow: hidden; /* Скрываем текст, выходящий за пределы */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    font-size: 1.17em; /* Размер шрифта */
+    line-height: 1.4; /* Межстрочный интервал */
+    max-height: calc(1.4em * 2); /* Ограничиваем высоту в зависимости от количества строк */
+    color: rgb(247, 252, 248); /* Цвет текста */
+    font-family: 'Inter', sans-serif; /* Шрифт */
+    padding-right: 10px;
+    min-height: 54px;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+  
+  .svg_time {
+    fill: white;
+    width: 24px;
+    height: 24px;
+  }
+
+  .text_and_icon {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+  }
+
+  .icon_text {
+    margin-left: 5px;
+    font-size: 0.95em;
+    letter-spacing: -0.5px; /* Уменьшает расстояние между буквами */
+    word-spacing: -2px; /* Уменьшает расстояние между словами */
+
+  }
+  .down_all_info{ 
+    display: flex;
+
+  }
+
+  .down_info_and_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+  @media (max-width: 425px) {
+    .header_down_info {
+      display: -webkit-box; /* Включаем поддержку блочной модели для обрезки текста */
+      -webkit-line-clamp: 3; /* Устанавливаем максимальное количество строк */
+      -webkit-box-orient: vertical; /* Вертикальная ориентация текста */
+      overflow: hidden; /* Скрываем текст, выходящий за пределы */
+      text-overflow: ellipsis; /* Добавляем многоточие */
+      font-size: 16px; /* Размер шрифта */
+      line-height: 1.1; /* Межстрочный интервал */
+      max-height: calc(1.4em * 2); /* Ограничиваем высоту в зависимости от количества строк */
+      color: rgb(247, 252, 248); /* Цвет текста */
+      font-family: 'Inter', sans-serif; /* Шрифт */
+      padding-right: 0px;
+      min-height: 34px;
+      margin: 0px;
+      margin-top: 20px;
+  }
+  
+  
+  .svg_time {
+    fill: white;
+    width: 36px;
+    height: 33px;
+  }
+  .text_and_icon {
+    padding-left: 0px;
+  }
+  .down_info_and_button {
+    flex-direction: column; /* Изменяем направление flex на колонку */
+    align-items: flex-start; /* Выравниваем элементы по левому краю (началу контейнера) */}
+  }  

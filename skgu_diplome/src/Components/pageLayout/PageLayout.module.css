@@ -1,0 +1,13 @@
+/* PageLayout.module.css */
+.pageLayout {
+  display: flex;
+  flex-direction: column; /* Хедер, контент, футер - вертикально */
+  min-height: 100vh; /* !!! Гарантирует, что лэйаут занимает минимум всю высоту экрана */
+  background-color: rgb(21, 21, 21); /* !!! Устанавливаем черный фон для всей страницы */
+}
+
+.content {
+  box-sizing: border-box;
+  padding-top: 60px; 
+
+}

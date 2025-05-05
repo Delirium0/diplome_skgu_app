@@ -1,0 +1,61 @@
+.faculties {
+    width: 140px;
+    height: 140px;
+    min-width: 140px;
+    min-height: 140px;
+    background-color: rgb(46, 46, 46);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* горизонтальное смещение, вертикальное смещение, размытие, цвет */
+    z-index: 1; /* чтобы блок был на переднем плане */
+    margin-top: 32px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column; /* Размещаем элементы по вертикали */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    justify-content: center; /* Центрируем элементы по вертикали */
+    text-align: center; /* Для текста внутри, чтобы он тоже был по центру */
+}
+
+.faculty-icon svg {
+
+    min-width: 70px;
+    min-height: 70px;
+}
+
+.faculty-icon {
+    display: flex;
+    justify-content: center; /* Центрируем иконку по горизонтали */
+    align-items: center; /* Центрируем иконку по вертикали */
+    margin-bottom: 5px; /* Отступ между иконкой и текстом */
+}
+
+.faculties div {
+    padding: 0px 5px;
+
+}
+.faculty-card-link, 
+.faculty-card-link:visited { /* <--- Применяем стили и к посещенным ссылкам */
+    color: inherit; /* <--- Наследует цвет текста от родительского элемента (или установите нужный вам, например, white) */
+    text-decoration: none; /* <--- Убирает подчеркивание */
+    display: block; /* <--- Чтобы ссылка вела себя как блок, занимая всю ширину/высоту, если нужно */
+    /* Можно добавить и другие стили, если необходимо */
+}
+
+/* Опционально: можно добавить стили для наведения/фокуса, 
+   чтобы пользователь видел интерактивность */
+.faculty-card-link:hover .faculties {
+    /* Например, немного изменить фон при наведении */
+    background-color: rgb(60, 60, 60); 
+    /* Или добавить рамку/тень */
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); */
+}
+
+/* Важно для доступности: добавить стили для фокуса */
+.faculty-card-link:focus {
+    outline: none; /* Убираем стандартный контур */
+}
+
+.faculty-card-link:focus .faculties {
+     /* Добавляем свой стиль фокуса, например, рамку */
+    box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.6), 0 4px 10px rgba(0, 0, 0, 0.3); /* Голубоватая рамка + тень */
+}

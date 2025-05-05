@@ -17,7 +17,7 @@ skgu_diplome/.env.local
 skgu_diplome/.env.development.local
 skgu_diplome/.env.test.local
 skgu_diplome/.env.production.local
-
+skgu_diplome_api/.env
 skgu_diplome/npm-debug.log*
 skgu_diplome/yarn-debug.log*
 skgu_diplome/yarn-error.log*

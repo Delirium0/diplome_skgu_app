@@ -1,0 +1,44 @@
+.snippet {
+    background-color: rgb(46, 46, 46); /* Фон как у карточек расписания */
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(60, 60, 60);
+  }
+  
+  .timeSubject {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap; /* Перенос на маленьких экранах */
+  }
+  
+  .time {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: rgb(200, 200, 200);
+  }
+  
+  .subject {
+    font-weight: bold;
+    font-size: 1.1em;
+    flex-grow: 1; /* Занимает доступное место */
+  }
+  
+  .lessonType {
+    font-size: 0.9em;
+    color: rgb(180, 180, 180);
+    margin-left: 5px;
+  }
+  
+  .teacher,
+  .classroom {
+    font-size: 0.95em;
+    color: rgb(210, 210, 210);
+    margin-top: 5px;
+  }
+  

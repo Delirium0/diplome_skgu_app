@@ -1,0 +1,118 @@
+/* src/faculties/FacultyPage.module.css */
+
+.facultyPage {
+    /* background-color: rgb(21, 21, 21); /* Уже должно быть в PageLayout или App */
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 30px 20px 60px 20px; /* Паддинг сверху, по бокам, снизу (под футер) */
+    min-height: calc(100vh - 60px); /* Минимальная высота минус высота футера */
+    box-sizing: border-box;
+  }
+  
+  /* Обертка для контента, чтобы ограничить ширину на больших экранах */
+  .contentWrapper {
+    max-width: 900px; /* Максимальная ширина контента */
+    margin: 0 auto; /* Центрирование */
+    background-color: rgb(46, 46, 46); /* Фон для контентной области */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .facultyName {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding-bottom: 20px;
+  }
+  
+  .section {
+    margin-bottom: 35px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6em;
+    color: rgb(220, 220, 220);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(60, 60, 60);
+  }
+  
+  .subSectionTitle {
+    font-size: 1.2em;
+    color: rgb(200, 200, 200);
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .textBlock {
+    line-height: 1.7;
+    font-size: 1em;
+  }
+  
+  .textBlock p { /* Стили для параграфов внутри dangerouslySetInnerHTML */
+    margin-bottom: 1em;
+  }
+  .textBlock p:last-child {
+      margin-bottom: 0;
+  }
+  
+  .linkList {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .linkList li {
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+  
+  .linkList a,
+  .socialLink {
+    color: rgb(138, 180, 248); /* Цвет ссылок */
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .linkList a:hover,
+  .socialLink:hover {
+    color: rgb(218, 230, 255);
+    text-decoration: underline;
+  }
+  
+  .statusMessage {
+    color: rgb(247, 252, 248);
+    font-family: 'Inter', sans-serif;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  
+  .error {
+    color: rgb(255, 100, 100); /* Красный цвет для ошибки */
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .facultyPage {
+      padding: 20px 15px 60px 15px;
+    }
+    .contentWrapper {
+        padding: 20px;
+    }
+    .facultyName {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+    .sectionTitle {
+      font-size: 1.4em;
+    }
+     .subSectionTitle {
+         font-size: 1.1em;
+     }
+     .textBlock, .linkList li {
+         font-size: 0.95em;
+     }
+  }

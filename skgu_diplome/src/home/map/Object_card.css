@@ -1,0 +1,85 @@
+.card {
+    display: flex;
+    height: 140px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin: 10px 10px;
+    flex: 1 1 calc(33.33% - 20px); /* Равномерное распределение по строке с учетом отступов */
+
+}
+.svg_block {
+    width: 20%;
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование */
+    align-items: center; /* Вертикальное центрирование */
+}
+.svg_card_main {
+
+    width: 66px;
+    height: 66px;
+    fill: rgb(247, 252, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* центрируем svg */
+    box-sizing: border-box; /* Важно! Учитывает отступы и границы */
+}
+
+.main_info_block {
+    width: 80%;
+    box-sizing: border-box; /* Важно! Учитывает отступы и границы */
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    justify-content: space-around;
+}
+
+
+@media (max-width: 425px) {
+
+    .svg_card_main {
+
+        width: 44px;
+        height: 44px;
+        fill: rgb(247, 252, 248);
+        display: flex;
+        justify-content: center;
+        align-items: center; /* центрируем svg */
+        box-sizing: border-box; /* Важно! Учитывает отступы и границы */
+    }
+    
+      
+    
+    }  /* В Object_card.css */
+/* В Object_card.css */
+.card-main-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 10px;
+    filter: brightness(0) invert(1); /* <--- ДОБАВИТЬ ЭТО */
+  }
+  
+  /* Не забудьте также добавить в медиа-запрос, если нужно */
+  @media (max-width: 425px) {
+    .card-main-icon {
+      width: 37px; /* Или ваш размер для мобильных */
+      height: 37px; /* Или ваш размер для мобильных */
+      /* filter: brightness(0) invert(1); - можно не дублировать, если он уже есть выше */
+    }
+  }
+    
+    .svg_block {
+      /* Возможно, нужно подправить стили родителя */
+      display: flex;
+      align-items: center; /* Выровнять иконку по центру вертикально */
+       /* Другие стили... */
+    }
+    
+    .icon-placeholder {
+        width: 40px; /* Такой же размер, как у иконки */
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 4px; /* Скругление углов */
+    }

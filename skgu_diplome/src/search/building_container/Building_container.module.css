@@ -1,0 +1,154 @@
+.container {
+    width: 90%;
+    background-color: red;
+    margin: 0 auto; /* Center the container */
+    height: 140px;
+    }
+.text_geo {
+    padding-top: 5px;
+    font-size: 12px;
+
+}
+
+    .cardqefqef {
+        display: flex; /* Keep flex direction row by default */
+        height: 140px; /* Фиксированная высота */
+        background-color: rgb(46, 46, 46);
+        border-radius: 16px;
+        box-sizing: border-box;
+        margin: 10px 10px;
+        flex: 1 1 calc(33.33% - 20px); /* Равномерное распределение по строке с учетом отступов */
+        overflow: auto; /*  Добавляем прокрутку, если контент не помещается */
+    }
+
+/* Добавляем стили для image_text_wrapper для десктопной версии */
+.image_text_wrapper {
+    display: flex; /* Делаем flex контейнером */
+    flex-direction: row; /* Устанавливаем горизонтальное направление */
+    width: 100%; /* Занимает всю ширину родителя */
+    height: 100%; /* Занимает всю высоту родителя, чтобы svg_block и main_info_block могли правильно выровняться по высоте cardqefqef */
+}
+
+
+.svg_block {
+    width: 20%; /* Keep width percentage */
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование */
+    align-items: center; /* Вертикальное центрирование */
+}
+.svg_card_main {
+
+    width: 66px;
+    height: 66px;
+    fill: rgb(247, 252, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* центрируем svg */
+    box-sizing: border-box; /* Важно! Учитывает отступы и границы */
+}
+
+.main_info_block {
+    width: 80%; /* Keep width percentage */
+    box-sizing: border-box; /* Важно! Учитывает отступы и границы */
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    justify-content: space-around;
+}
+
+
+
+.suggestionIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+
+  }
+
+.main_icon {
+
+width: 70px;          /* Настройте размер иконки по вкусу */
+height: 70px;
+object-fit: contain;
+margin-right: 8px;      /* Отступ между иконкой и текстом */
+filter: brightness(0) invert(1);
+
+}
+.text_and_icon{
+    display: flex;
+}
+.button_dop_info {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 11px; /* Добавляет 11px отступа снизу */
+    padding-right: 50px;
+    margin-left: auto; /* Отодвигаем кнопку вправо */
+}
+
+.text_time{
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+
+@media (max-width: 425px) {
+    .cardqefqef {
+        flex-direction: column; /* Change direction to column for button positioning */
+        height: auto; /*  Automatic height */
+        display: flex; /* Ensure flexbox is still active */
+    }
+
+    /* Стили для image_text_wrapper в мобильной версии - остаются прежними */
+    .image_text_wrapper {
+        display: flex; /* Делаем обертку flex контейнером */
+        flex-direction: row; /* Устанавливаем горизонтальное направление */
+        width: 100%; /* Занимает всю ширину родителя */
+        height: auto; /*  Автовысота для мобильной версии, чтобы подстраиваться под контент */
+    }
+
+
+    .svg_block {
+        width: 30%; /*  Уменьшаем ширину блока картинки, чтобы текст поместился рядом */
+        margin-bottom: 0; /* Убираем отступ снизу, если он был */
+        justify-content: center; /* Центрируем иконку горизонтально */
+        align-items: center; /* Центрируем иконку вертикально */
+        display: flex; /* Ensure flexbox is active */
+        flex-direction: column; /* Stack icon and potentially icon container vertically if needed */
+    }
+
+    .main_info_block {
+        width: 70%; /* Увеличиваем ширину блока текста, чтобы занять оставшееся место */
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex; /* Ensure flexbox is active */
+        flex-direction: column; /* Stack text elements vertically */
+        justify-content: space-around; /*  Распределяем пространство между элементами текста */
+    }
+
+    .button_dop_info {
+        width: 100%; /* Button full width */
+        margin-left: 0;
+        padding-right: 0;
+        justify-content: center; /* Center button horizontally */
+        padding-bottom: 16px;
+        align-items: center;
+        display: flex; /* Ensure flexbox is active */
+    }
+
+    /* Keep icon and text sizes adjusted for small screens */
+    .main_icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .main_text {
+        font-size: 16px;
+    }
+    .text_time{
+        margin-right: 5px;
+        font-size: 12px;
+    }
+}
