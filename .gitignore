@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+skgu_diplome/node_modules
+skgu_diplome/diplome/.pnp
+skgu_diplome/.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+skgu_diplome/.DS_Store
+skgu_diplome/.env.local
+skgu_diplome/.env.development.local
+skgu_diplome/.env.test.local
+skgu_diplome/.env.production.local
+
+skgu_diplome/npm-debug.log*
+skgu_diplome/yarn-debug.log*
+skgu_diplome/yarn-error.log*
+skgu_diplome/.env
